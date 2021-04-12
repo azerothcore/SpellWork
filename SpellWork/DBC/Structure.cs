@@ -28,7 +28,7 @@ namespace SpellWork.DBC
         {
             get { return DataSize + Marshal.SizeOf(typeof(DbcHeader)); }
         }
-    };
+    }
 
     [StructLayout(LayoutKind.Sequential)]
     public struct SpellEntry
@@ -287,7 +287,7 @@ namespace SpellWork.DBC
                 return (SpellSchoolMask)SchoolMask;
             }
         }
-    };
+    }
 
     public struct SkillLineEntry
     {
@@ -320,7 +320,7 @@ namespace SpellWork.DBC
         {
             get { return DBC.SkillLineStrings.GetValue(InternalAlternateVerb[(uint)DBC.Locale]); }
         }
-    };
+    }
 
     public struct SkillLineAbilityEntry
     {
@@ -338,7 +338,7 @@ namespace SpellWork.DBC
         public uint MinValue;                                       // 11       m_trivialSkillLineRankLow
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         public uint[] CharacterPoints;                              // 12-13    m_characterPoints[2]
-    };
+    }
 
     public struct SpellRadiusEntry
     {
@@ -346,7 +346,7 @@ namespace SpellWork.DBC
         public float Radius;
         public int   Zero;
         public float Radius2;
-    };
+    }
 
     public struct SpellRangeEntry
     {
@@ -372,7 +372,7 @@ namespace SpellWork.DBC
         {
             get { return DBC.SpellRangeStrings.GetValue(Desc2[(uint)DBC.Locale]); }
         }
-    };
+    }
 
     public struct SpellDurationEntry
     {
@@ -384,7 +384,7 @@ namespace SpellWork.DBC
         {
             return String.Format("Duration: ID ({0})  {1}, {2}, {3}", Id, Duration[0], Duration[1], Duration[2]);
         }
-    };
+    }
 
     public struct SpellCastTimesEntry
     {
@@ -392,14 +392,14 @@ namespace SpellWork.DBC
         public int   CastTime;
         public float CastTimePerLevel;
         public int   MinCastTime;
-    };
+    }
 
     public struct SpellDifficultyEntry
     {
         public uint  Id;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public int[] SpellId;
-    };
+    }
 
     public struct ScreenEffectEntry
     {
@@ -418,7 +418,7 @@ namespace SpellWork.DBC
         {
             get { return DBC.ScreenEffectStrings.GetValue(InternalName); }
         }
-    };
+    }
 
     public struct SpellVisualEntry
     {
@@ -454,7 +454,7 @@ namespace SpellWork.DBC
         public float MissileImpactOffsetX;
         public float MissileImpactOffsetY;
         public float MissileImpactOffsetZ;
-    };
+    }
 
     public struct SpellMissileMotionEntry
     {
@@ -473,7 +473,7 @@ namespace SpellWork.DBC
         {
             get { return DBC.SpellMissileMotionStrings.GetValue(_Script); }
         }
-    };
+    }
 
     public struct SpellMissileEntry
     {
@@ -492,7 +492,7 @@ namespace SpellWork.DBC
         public float gravity;
         public float maxDuration;
         public float collisionRadius;
-    };
+    }
 
     public struct OverrideSpellDataEntry
     {
@@ -501,7 +501,7 @@ namespace SpellWork.DBC
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
         public uint[] Spells;
         public uint Unk;
-    };
+    }
 
     public struct AreaGroupEntry
     {
@@ -509,7 +509,7 @@ namespace SpellWork.DBC
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
         public uint[] AreaId;
         public uint NextGroup;
-    };
+    }
 
     public struct AreaTableEntry
     {
@@ -540,7 +540,7 @@ namespace SpellWork.DBC
         {
             get { return DBC.AreaStrings.GetValue(NamePtr[(uint)DBC.Locale]); }
         }
-    };
+    }
     //=============== DateBase =================\\
 
     public struct SpellProcEventEntry
@@ -574,7 +574,7 @@ namespace SpellWork.DBC
                 Cooldown.ToString()
             };
         }
-    };
+    }
 
     public struct SpellChain
     {
@@ -583,7 +583,7 @@ namespace SpellWork.DBC
         public int FirstSpell;
         public int Rank;
         public int ReqSpell;
-    };
+    }
 
     public struct Item
     {
@@ -593,5 +593,5 @@ namespace SpellWork.DBC
         public string   LocalesName;
         public string   LocalesDescription;
         public int[]   SpellId;
-    };
+    }
 }
