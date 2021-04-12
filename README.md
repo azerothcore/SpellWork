@@ -1,7 +1,7 @@
 SpellWork
 =========
 
-[PlaceHolderForCodacy]
+[![CodeFactor](https://www.codefactor.io/repository/github/kitzunu/spellwork/badge)](https://www.codefactor.io/repository/github/kitzunu/spellwork)
 
 SpellWork is a tool to browse and display information about World of Wacraft spells.
 It is implemented in .NET and it runs on Windows and Linux (with Mono).
