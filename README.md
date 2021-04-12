@@ -8,7 +8,7 @@ It is implemented in .NET and it runs on Windows and Linux (with Mono).
 
 Instructions: Run `SpellWork.exe` and select the DBC folder extracted from the client (e.g. by running TrinityCore's `map_extractor`).
 
-![Screenshot](screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/TrinityCore/SpellWork/9.x/screenshot.png)
 
 Nightly Builds & Downloads
 --------------------------
