@@ -13,8 +13,8 @@ Instructions: Run `SpellWork.exe` and select the DBC folder extracted from the c
 Nightly Builds & Downloads
 --------------------------
 
-- [**3.3.5a (12340)** (branch master)](https://ci.appveyor.com/api/projects/DDuarte/spellwork-cs/artifacts/SpellWork/SpellWork.zip?job=Configuration:%20Release&branch=master)
-[![Build status](https://ci.appveyor.com/api/projects/status/bdkqqtu62sc21lw5/branch/master?svg=true)](https://ci.appveyor.com/project/DDuarte/spellwork-cs/branch/master)
+- [**3.3.5a (12340)** (branch master)](https://ci.appveyor.com/api/projects/Kitzunu/spellwork/artifacts/spelwork/bin.zip?job=Configuration:%20Release&branch=master)
+[![Build status](https://ci.appveyor.com/api/projects/status/xjp99wdbywxofcvd/branch/master?svg=true)](https://ci.appveyor.com/project/Kitzunu/spellwork/branch/master)
 
 History
 -------
