@@ -1,5 +1,5 @@
-SpellWork
-=========
+# SpellWork
+
 
 [![CodeFactor](https://www.codefactor.io/repository/github/kitzunu/spellwork/badge)](https://www.codefactor.io/repository/github/kitzunu/spellwork)
 
@@ -10,14 +10,14 @@ Instructions: Run `SpellWork.exe` and select the DBC folder extracted from the c
 
 ![Screenshot](https://raw.githubusercontent.com/TrinityCore/SpellWork/9.x/screenshot.png)
 
-Nightly Builds & Downloads
---------------------------
+## Builds & Downloads
+
+Clicking on the link will automatically download the artifact containing a .exe file.
 
 - [**3.3.5a (12340)** (branch master)](https://ci.appveyor.com/api/projects/Kitzunu/spellwork/artifacts/SpellWork/bin.zip?job=Configuration:%20Release&branch=master)
 [![Build status](https://ci.appveyor.com/api/projects/status/xjp99wdbywxofcvd/branch/master?svg=true)](https://ci.appveyor.com/project/Kitzunu/spellwork/branch/master)
 
-History
--------
+## History
 
 SpellWork is a tool originally created by Chestr (also known as DiSlord).
 
