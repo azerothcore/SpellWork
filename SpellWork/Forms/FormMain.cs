@@ -103,7 +103,7 @@ namespace SpellWork.Forms
                 _dbConnect.ForeColor = Color.Green;
                 // read db data
                 DBC.DBC.ItemTemplate = MySqlConnection.SelectItems();
-                MySqlConnection.LoadSpellsDBCFromDB();
+                // MySqlConnection.LoadSpellsDBCFromDB();
             }
             else
             {
@@ -549,11 +549,12 @@ namespace SpellWork.Forms
             // spell comment
             var comment = String.Format("-- ({0}) {1}", ProcInfo.SpellProc.ID, ProcInfo.SpellProc.SpellNameRank);
             // drop query
-            var drop = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` IN ({0});", ProcInfo.SpellProc.ID);
+            var drop = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = {0};", ProcInfo.SpellProc.ID);
             // insert query
             var insert =
                 String.Format(
-                    "INSERT INTO `spell_proc_event` VALUES ({0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
+                    "INSERT INTO `spell_proc_event` VALUES" + 
+                        "\n" + "({0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
                     ProcInfo.SpellProc.ID, _clbSchools.GetFlagsValue(), _cbProcFitstSpellFamily.SelectedValue.ToUInt32(),
                     spellFamilyFlags[0], spellFamilyFlags[1], spellFamilyFlags[2], _clbProcFlags.GetFlagsValue(),
                     _clbProcFlagEx.GetFlagsValue(), _tbPPM.Text.Replace(',', '.'), _tbChance.Text.Replace(',', '.'),
@@ -570,7 +571,14 @@ namespace SpellWork.Forms
         private void ProcParse(object sender)
         {
             var proc = MySqlConnection.SpellProcEvent[((ListView)sender).SelectedIndices[0]];
-            var spell = DBC.DBC.Spell[proc.Id];
+
+            if (proc.Entry <= 0)
+                throw new InvalidOperationException("ERROR:" + "\n\n" + "This feature is not yet supported." +
+                                                        "\n" + "Negative Entries needs to be edited manually in an SQL Client." + 
+                                                        "\n\n" + "Press \"Continue\" to continue using SpellWork");
+
+            var spell = DBC.DBC.Spell[(uint)proc.Entry];
+
             ProcInfo.SpellProc = spell;
 
             new SpellInfo(_rtbProcSpellInfo, spell);

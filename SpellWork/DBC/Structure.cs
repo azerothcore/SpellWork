@@ -545,7 +545,7 @@ namespace SpellWork.DBC
 
     public struct SpellProcEventEntry
     {
-        public uint     Id;
+        public int      Entry;
         public string   SpellName;
         public byte     SchoolMask;
         public ushort   SpellFamilyName;
@@ -560,7 +560,7 @@ namespace SpellWork.DBC
         {
             return new[]
             {
-                Id.ToString(),
+                Entry.ToString(),
                 SpellName,
                 SchoolMask.ToString(),
                 SpellFamilyName.ToString(),

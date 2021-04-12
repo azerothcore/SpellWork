@@ -1497,52 +1497,52 @@
             //
             // schoolmask
             //
-            this.schoolmask.Text = "School Mask";
+            this.schoolmask.Text = "SchoolMask";
             this.schoolmask.Width = 78;
             //
             // spellfamilyname
             //
-            this.spellfamilyname.Text = "Spell Family Name";
+            this.spellfamilyname.Text = "SpellFamilyName";
             this.spellfamilyname.Width = 103;
             //
             // spellfamilymask0
             //
-            this.spellfamilymask0.Text = "Spell Family Mask 0";
+            this.spellfamilymask0.Text = "SpellFamilyMask0";
             this.spellfamilymask0.Width = 110;
             //
             // spellfamilymask1
             //
-            this.spellfamilymask1.Text = "Spell Family Mask 1";
+            this.spellfamilymask1.Text = "SpellFamilyMask1";
             this.spellfamilymask1.Width = 110;
             //
             // spellfamilymask2
             //
-            this.spellfamilymask2.Text = "Spell Family Mask 2";
+            this.spellfamilymask2.Text = "SpellFamilyMask2";
             this.spellfamilymask2.Width = 110;
             //
             // procflag
             //
-            this.procflag.Text = "Proc Flags";
+            this.procflag.Text = "procFlags";
             this.procflag.Width = 80;
             //
             // procEx
             //
-            this.procEx.Text = "Proc Ex";
+            this.procEx.Text = "procEx";
             this.procEx.Width = 80;
             //
             // ppmRate
             //
-            this.ppmRate.Text = "PPM Rate";
+            this.ppmRate.Text = "ppmRate";
             this.ppmRate.Width = 67;
             //
             // customchance
             //
-            this.customchance.Text = "Custom Chance";
+            this.customchance.Text = "CustomChance";
             this.customchance.Width = 93;
             //
             // cooldown
             //
-            this.cooldown.Text = "Colldown";
+            this.cooldown.Text = "Cooldown";
             //
             // _rtbSqlLog
             //

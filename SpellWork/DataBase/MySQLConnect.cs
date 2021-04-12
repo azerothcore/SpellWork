@@ -30,16 +30,18 @@ namespace SpellWork.Database
             }
         }
 
-        private static String GetSpellName(uint id)
+        private static String GetSpellName(int id)
         {
-            if (DBC.DBC.Spell.ContainsKey(id))
-                return DBC.DBC.Spell[id].SpellNameRank;
+            if (id < 0)
+                id = id * -1; // Convert to positive id to be able to find it in DBC
 
-            Dropped.Add(String.Format("DELETE FROM `spell_proc_event` WHERE `entry` IN ({0});\r\n", id.ToUInt32()));
+            if (DBC.DBC.Spell.ContainsKey((uint)id))
+                return DBC.DBC.Spell[(uint)id].SpellNameRank;
+
             return String.Empty;
         }
 
-        public static void LoadSpellsDBCFromDB()
+        /* public static void LoadSpellsDBCFromDB()
         {
             using (_conn = new MySql.Data.MySqlClient.MySqlConnection(ConnectionString))
             {
@@ -245,7 +247,7 @@ namespace SpellWork.Database
                 foreach (KeyValuePair<uint, SpellEntry> pair in sortedList)
                     DBC.DBC.Spell.Add(pair.Key, pair.Value);
             }
-        }
+        } */
 
         public static void SelectProc(string query)
         {
@@ -259,10 +261,10 @@ namespace SpellWork.Database
                 {
                     while (reader.Read())
                     {
-                        uint spellId = reader.GetUInt32(0);
+                        int spellId = reader.GetInt32(0);
                         SpellProcEvent.Add(new SpellProcEventEntry
                         {
-                            Id                  = spellId,
+                            Entry               = spellId,
                             SpellName           = GetSpellName(spellId),
                             SchoolMask          = reader.GetByte(1),
                             SpellFamilyName     = reader.GetUInt16(2),
