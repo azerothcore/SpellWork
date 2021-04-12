@@ -574,10 +574,16 @@ namespace SpellWork.Forms
 
             var id = proc.Entry;
 
-            // Experimental, will fuck up editing negative...
+            string title = "NOTE!";
+            string message = "Changing a negative Spell WILL make the changes to the POSITIVE counterpart, therefore not applying the change to all ranks." + "\n\n" +
+                             "It is highly recommended to change this with an SQL client!" + "\n\n" + "This will be supported in the future.";
 
+            // Experimental, will fuck up editing negative...
             if (id <= 0)
+            {
                 id = id * -1;
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             var spell = DBC.DBC.Spell[(uint)id];
 
