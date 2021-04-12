@@ -13,7 +13,7 @@ namespace SpellWork.Spell
         /// <summary>
         /// Search terms
         /// </summary>
-        readonly string[] _words = new[] { "=====" };// todo: more wodrs
+        readonly string[] _words = new[] { "=====" }; // todo: more wodrs
 
         /// <summary>
         /// Compares two spells

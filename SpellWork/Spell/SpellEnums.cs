@@ -14,7 +14,7 @@ namespace SpellWork.Spell
         esES,
         esMX,
         ruRU
-    };
+    }
 
     /// <summary>
     ///
@@ -39,7 +39,7 @@ namespace SpellWork.Spell
         SPELLFAMILY_DEATHKNIGHT = 15,
         // unused               = 16,
         SPELLFAMILY_PET         = 17
-    };
+    }
 
     /// <summary>
     ///
@@ -70,7 +70,7 @@ namespace SpellWork.Spell
         SPELL_SPECIFIC_PRIEST_DIVINE_SPIRIT     = 27,
         SPELL_SPECIFIC_HAND                     = 28,
         SPELL_SPECIFIC_PHASE                    = 29,
-    };
+    }
 
     /// <summary>
     ///
@@ -243,7 +243,7 @@ namespace SpellWork.Spell
         SPELL_EFFECT_163                              = 163,
         SPELL_EFFECT_REMOVE_AURA                      = 164,
         TOTAL_SPELL_EFFECTS                           = 165
-    };
+    }
 
     /// <summary>
     ///
@@ -687,7 +687,7 @@ namespace SpellWork.Spell
         TARGET_109                              = 109,
         TARGET_DEST_UNK_110                     = 110, // 1 spell
         TOTAL_SPELL_TARGETS,
-    };
+    }
 
     ///<summary>
     ///Spell proc event related declarations (accessed using SpellMgr functions)
@@ -732,7 +732,7 @@ namespace SpellWork.Spell
         PROC_FLAG_DONE_OFFHAND_ATTACK               = 0x00800000,    // 23 Done off-hand melee attacks (spell and autoattack)
 
         PROC_FLAG_DEATH                             = 0x01000000     // 24 Died in any way
-    };
+    }
 
     [Flags]
     public enum ProcFlagsEx
@@ -757,7 +757,7 @@ namespace SpellWork.Spell
         PROC_EX_EX_TRIGGER_ALWAYS       = 0x0010000,                 // If set trigger always no matter of hit result
         PROC_EX_EX_ONE_TIME_TRIGGER     = 0x0020000,                 // If set trigger always but only one time (not implemented yet)
         PROC_EX_ONLY_ACTIVE_SPELL       = 0x0040000,                 // Spell has to do damage/heal to proc
-    };
+    }
 
     public enum SpellSchools
     {
@@ -768,7 +768,7 @@ namespace SpellWork.Spell
         SPELL_SCHOOL_FROST  = 4,
         SPELL_SCHOOL_SHADOW = 5,
         SPELL_SCHOOL_ARCANE = 6
-    };
+    }
 
     [Flags]
     public enum SpellSchoolMask
@@ -792,7 +792,7 @@ namespace SpellWork.Spell
         SPELL_SCHOOL_MASK_MAGIC = (SPELL_SCHOOL_MASK_HOLY | SPELL_SCHOOL_MASK_SPELL),
         // 127
         SPELL_SCHOOL_MASK_ALL   = (SPELL_SCHOOL_MASK_NORMAL | SPELL_SCHOOL_MASK_MAGIC)
-    };
+    }
 
     public enum Mechanics
     {
@@ -828,7 +828,7 @@ namespace SpellWork.Spell
         MECHANIC_IMMUNE_SHIELD      = 29,  // Divine (Blessing) Shield/Protection and Ice Block
         MECHANIC_SAPPED             = 30,
         MECHANIC_ENRAGED            = 31
-    };
+    }
 
     public enum SpellMissInfo
     {
@@ -844,7 +844,7 @@ namespace SpellWork.Spell
         SPELL_MISS_DEFLECT  = 9,
         SPELL_MISS_ABSORB   = 10,
         SPELL_MISS_REFLECT  = 11
-    };
+    }
 
     [Flags]
     public enum SpellHitType
@@ -855,7 +855,7 @@ namespace SpellWork.Spell
         SPELL_HIT_TYPE_UNK4 = 0x00008,
         SPELL_HIT_TYPE_UNK5 = 0x00010,                          // replace caster?
         SPELL_HIT_TYPE_UNK6 = 0x00020
-    };
+    }
 
     public enum SpellDmgClass
     {
@@ -863,14 +863,14 @@ namespace SpellWork.Spell
         SPELL_DAMAGE_CLASS_MAGIC  = 1,
         SPELL_DAMAGE_CLASS_MELEE  = 2,
         SPELL_DAMAGE_CLASS_RANGED = 3
-    };
+    }
 
     public enum SpellPreventionType
     {
         SPELL_PREVENTION_TYPE_NONE    = 0,
         SPELL_PREVENTION_TYPE_SILENCE = 1,
         SPELL_PREVENTION_TYPE_PACIFY  = 2
-    };
+    }
 
     [Flags]
     public enum ShapeshiftFormMask : uint
@@ -909,7 +909,7 @@ namespace SpellWork.Spell
         FORM_STEALTH            = 0x20000000,   // 30
         FORM_MOONKIN            = 0x40000000,   // 31
         FORM_SPIRITOFREDEMPTION = 0x80000000,   // 32
-    };
+    }
 
     public enum DispelType
     {
@@ -925,7 +925,7 @@ namespace SpellWork.Spell
         DISPEL_ENRAGE       = 9,
         DISPEL_ZG_TICKET    = 10,
         DESPEL_OLD_UNUSED   = 11
-    };
+    }
 
     public enum SpellModOp
     {
@@ -960,7 +960,7 @@ namespace SpellWork.Spell
         SPELLMOD_RESIST_DISPEL_CHANCE   = 28,
         SPELLMOD_CRIT_DAMAGE_BONUS_2    = 29, //one not used spell
         SPELLMOD_SPELL_COST_REFUND_ON_FAIL = 30
-    };
+    }
 
     [Flags]
     public enum SpellCastTargetFlags
@@ -987,7 +987,7 @@ namespace SpellWork.Spell
         TARGET_FLAG_UNK19           = 0x00040000,               // sometimes appears with DEST_TARGET spells (may appear or not for a given spell)
         TARGET_FLAG_UNUSED20        = 0x00080000,               // uint32 counter, loop { vec3 - screen position (?), guid }, not used so far
         TARGET_FLAG_UNIT_PASSENGER  = 0x00100000,               // guessed, used to validate target (if vehicle passenger)
-    };
+    }
 
     public enum Powers : uint
     {
@@ -999,7 +999,7 @@ namespace SpellWork.Spell
         POWER_RUNE          = 5,
         POWER_RUNIC_POWER   = 6,
         POWER_HEALTH        = 0xFFFFFFFE,    // (-2 as signed value)
-    };
+    }
 
     public enum AuraState
     {   // (C) used in caster aura state     (T) used in target aura state
@@ -1030,7 +1030,7 @@ namespace SpellWork.Spell
         AURA_STATE_UNKNOWN21                = 21,           //     | not used
         AURA_STATE_UNKNOWN22                = 22,           // C  t| not implemented yet (Requires Evasive Charges to use)
         AURA_STATE_HEALTH_ABOVE_75_PERCENT  = 23            // C   |
-    };
+    }
 
     [Flags]
     enum InventoryTypeMask
@@ -1065,7 +1065,7 @@ namespace SpellWork.Spell
         RANGEDRIGHT     = 1 << 26,
         QUIVER          = 1 << 27,
         RELIC           = 1 << 28,
-    };
+    }
 
     public enum ItemClass
     {
@@ -1087,7 +1087,7 @@ namespace SpellWork.Spell
         MISC        = 15,
         GLYPH       = 16,
         MAX
-    };
+    }
 
     [Flags]
     public enum ItemSubClassWeaponMask
@@ -1114,7 +1114,7 @@ namespace SpellWork.Spell
         CROSSBOW        = 1 << 18,
         WAND            = 1 << 19,
         FISHING_POLE    = 1 << 20
-    };
+    }
 
     [Flags]
     public enum ItemSubClassArmorMask
@@ -1131,7 +1131,7 @@ namespace SpellWork.Spell
         IDOL    = 1 << 8,
         TOTEM   = 1 << 9,
         SIGIL   = 1 << 10
-    };
+    }
 
     [Flags]
     public enum ItemSubClassMiscMask
@@ -1163,7 +1163,7 @@ namespace SpellWork.Spell
         TOTEM           = 1 << 10,
         NON_COMBAT_PET  = 1 << 11,
         GAS_CLOUD       = 1 << 12
-    };
+    }
 
     [Flags]
     public enum SpellAtribute : uint
@@ -1202,7 +1202,7 @@ namespace SpellWork.Spell
         SPELL_ATTR0_UNAFFECTED_BY_INVULNERABILITY    = 0x20000000, // 29 unaffected by invulnerability (hmm possible not...)
         SPELL_ATTR0_HEARTBEAT_RESIST_CHECK           = 0x40000000, // 30 random chance the effect will end TODO: implement core support
         SPELL_ATTR0_CANT_CANCEL                      = 0x80000000  // 31 positive aura can't be canceled
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx : uint
@@ -1241,7 +1241,7 @@ namespace SpellWork.Spell
         SPELL_ATTR1_CHANNEL_DISPLAY_SPELL_NAME       = 0x20000000, // 29 spell name is displayed in cast bar instead of 'channeling' text
         SPELL_ATTR1_ENABLE_AT_DODGE                  = 0x40000000, // 30 Overpower
         SPELL_ATTR1_UNK31                            = 0x80000000  // 31
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx2 : uint
@@ -1280,7 +1280,7 @@ namespace SpellWork.Spell
         SPELL_ATTR2_CANT_CRIT                        = 0x20000000, // 29 Spell can't crit
         SPELL_ATTR2_TRIGGERED_CAN_TRIGGER_PROC       = 0x40000000, // 30 spell can trigger even if triggered
         SPELL_ATTR2_FOOD_BUFF                        = 0x80000000  // 31 Food or Drink Buff (like Well Fed)
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx3 : uint
@@ -1319,7 +1319,7 @@ namespace SpellWork.Spell
         SPELL_ATTR3_NO_DONE_BONUS                    = 0x20000000, // 29 Ignore caster spellpower and done damage mods?  client doesn't apply spellmods for those spells
         SPELL_ATTR3_DONT_DISPLAY_RANGE               = 0x40000000, // 30 client doesn't display range in tooltip for those spells
         SPELL_ATTR3_UNK31                            = 0x80000000  // 31
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx4 : uint
@@ -1358,7 +1358,7 @@ namespace SpellWork.Spell
         SPELL_ATTR4_UNK29                            = 0x20000000, // 29
         SPELL_ATTR4_UNK30                            = 0x40000000, // 30
         SPELL_ATTR4_UNK31                            = 0x80000000  // 31 Polymorph (chicken) 228 and Sonic Boom (38052, 38488)
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx5 : uint
@@ -1397,7 +1397,7 @@ namespace SpellWork.Spell
         SPELL_ATTR5_UNK29                            = 0x20000000, // 29
         SPELL_ATTR5_UNK30                            = 0x40000000, // 30
         SPELL_ATTR5_UNK31                            = 0x80000000  // 31 Forces all nearby enemies to focus attacks caster
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx6 : uint
@@ -1436,7 +1436,7 @@ namespace SpellWork.Spell
         SPELL_ATTR6_NO_DONE_PCT_DAMAGE_MODS          = 0x20000000, // 29 ignores done percent damage mods?
         SPELL_ATTR6_UNK30                            = 0x40000000, // 30
         SPELL_ATTR6_IGNORE_CATEGORY_COOLDOWN_MODS    = 0x80000000  // 31 Spells with this attribute skip applying modifiers to category cooldowns
-    };
+    }
 
     [Flags]
     public enum SpellAtributeEx7 : uint
@@ -1475,7 +1475,7 @@ namespace SpellWork.Spell
         SPELL_ATTR7_UNK29                            = 0x20000000, // 29 only 69028, 71237
         SPELL_ATTR7_UNK30                            = 0x40000000, // 30 Burning Determination, Divine Sacrifice, Earth Shield, Prayer of Mending
         SPELL_ATTR7_CLIENT_INDICATOR                 = 0x80000000  // 31
-    };
+    }
 
     [Flags]
     public enum CombatRating
@@ -1505,7 +1505,7 @@ namespace SpellWork.Spell
         CR_WEAPON_SKILL_RANGED      = 1 << 0x16,
         CR_EXPERTISE                = 1 << 0x17,
         CR_ARMOR_PENETRATION        = 1 << 0x18,
-    };
+    }
 
     public enum UnitMods
     {
@@ -1542,7 +1542,7 @@ namespace SpellWork.Spell
         UNIT_MOD_RESISTANCE_END         = UNIT_MOD_RESISTANCE_ARCANE + 1,
         UNIT_MOD_POWER_START            = UNIT_MOD_MANA,
         UNIT_MOD_POWER_END              = UNIT_MOD_RUNIC_POWER       + 1,
-    };
+    }
 
     enum GameObjectActions
     {
@@ -1571,7 +1571,7 @@ namespace SpellWork.Spell
         UseArtKit2,                     // Use ArtKit2
         UseArtKit3,                     // Use ArtKit3
         SetTapList,                     // Set Tap List
-    };
+    }
 
 // ReSharper restore InconsistentNaming
 

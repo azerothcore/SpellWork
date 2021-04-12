@@ -616,7 +616,6 @@ namespace SpellWork.Spell
                     }
                 }
 
-
                 if (groupEntry.NextGroup == 0)
                     break;
 
