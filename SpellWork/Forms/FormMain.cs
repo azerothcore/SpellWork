@@ -572,12 +572,14 @@ namespace SpellWork.Forms
         {
             var proc = MySqlConnection.SpellProcEvent[((ListView)sender).SelectedIndices[0]];
 
-            if (proc.Entry <= 0)
-                throw new InvalidOperationException("ERROR:" + "\n\n" + "This feature is not yet supported." +
-                                                        "\n" + "Negative Entries needs to be edited manually in an SQL Client." + 
-                                                        "\n\n" + "Press \"Continue\" to continue using SpellWork");
+            var id = proc.Entry;
 
-            var spell = DBC.DBC.Spell[(uint)proc.Entry];
+            // Experimental, will fuck up editing negative...
+
+            if (id <= 0)
+                id = id * -1;
+
+            var spell = DBC.DBC.Spell[(uint)id];
 
             ProcInfo.SpellProc = spell;
 
