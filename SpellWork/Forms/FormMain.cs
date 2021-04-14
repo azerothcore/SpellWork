@@ -69,7 +69,7 @@ namespace SpellWork.Forms
 
         private void TabControl1SelectedIndexChanged(object sender, EventArgs e)
         {
-            _cbProcFlag.Visible = _bWrite.Visible = ((TabControl)sender).SelectedIndex == 1;
+            _cbProcFlag.Visible = _bWrite.Visible = _cbUseNegative.Visible = ((TabControl)sender).SelectedIndex == 2;
         }
 
         private void SettingsClick(object sender, EventArgs e)
@@ -548,22 +548,36 @@ namespace SpellWork.Forms
             var spellFamilyFlags = _tvFamilyTree.GetMask();
             // spell comment
             var comment = String.Format("-- ({0}) {1}", ProcInfo.SpellProc.ID, ProcInfo.SpellProc.SpellNameRank);
-            // drop query
-            var drop = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = {0};", ProcInfo.SpellProc.ID);
+            // delete query
+            var delete = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = {0};", ProcInfo.SpellProc.ID);
             // insert query
-            var insert =
-                String.Format(
-                    "INSERT INTO `spell_proc_event` VALUES" + 
-                        "\n" + "({0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
-                    ProcInfo.SpellProc.ID, _clbSchools.GetFlagsValue(), _cbProcFitstSpellFamily.SelectedValue.ToUInt32(),
-                    spellFamilyFlags[0], spellFamilyFlags[1], spellFamilyFlags[2], _clbProcFlags.GetFlagsValue(),
-                    _clbProcFlagEx.GetFlagsValue(), _tbPPM.Text.Replace(',', '.'), _tbChance.Text.Replace(',', '.'),
-                    _tbCooldown.Text.Replace(',', '.'));
+            var insert = String.Format(
+                            "INSERT INTO `spell_proc_event` VALUES" + "({0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
+                            ProcInfo.SpellProc.ID, _clbSchools.GetFlagsValue(), _cbProcFitstSpellFamily.SelectedValue.ToUInt32(),
+                            spellFamilyFlags[0], spellFamilyFlags[1], spellFamilyFlags[2], _clbProcFlags.GetFlagsValue(),
+                            _clbProcFlagEx.GetFlagsValue(), _tbPPM.Text.Replace(',', '.'), _tbChance.Text.Replace(',', '.'),
+                            _tbCooldown.Text.Replace(',', '.'));
+            
+            // if _cbUseNegative is checked we need to use a negative entry as it affects all ranks
+            if (_cbUseNegative.Checked)
+            {
+                // spell comment
+                comment = String.Format("-- ({0}) {1} (All Ranks)", ProcInfo.SpellProc.ID, ProcInfo.SpellProc.SpellNameRank);
+                // delete query
+                delete = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = -{0};", ProcInfo.SpellProc.ID);
+                // insert query
+                insert = String.Format(
+                            "INSERT INTO `spell_proc_event` VALUES" + "(-{0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
+                            ProcInfo.SpellProc.ID, _clbSchools.GetFlagsValue(), _cbProcFitstSpellFamily.SelectedValue.ToUInt32(),
+                            spellFamilyFlags[0], spellFamilyFlags[1], spellFamilyFlags[2], _clbProcFlags.GetFlagsValue(),
+                            _clbProcFlagEx.GetFlagsValue(), _tbPPM.Text.Replace(',', '.'), _tbChance.Text.Replace(',', '.'),
+                            _tbCooldown.Text.Replace(',', '.'));
+            }
 
-            _rtbSqlLog.AppendText(comment + "\r\n" + drop + "\r\n" + insert + "\r\n\r\n");
+            _rtbSqlLog.AppendText(comment + "\r\n" + delete + "\r\n" + insert + "\r\n\r\n");
             _rtbSqlLog.ColorizeCode();
-            if (MySqlConnection.Connected)
-                MySqlConnection.Insert(drop + insert);
+            //if (MySqlConnection.Connected)
+            //    MySqlConnection.Insert(delete + insert);
 
             ((Button)sender).Enabled = false;
         }
@@ -574,15 +588,14 @@ namespace SpellWork.Forms
 
             var id = proc.Entry;
 
-            string title = "NOTE!";
-            string message = "Changing a negative Spell WILL make the changes to the POSITIVE counterpart, therefore not applying the change to all ranks." + "\n\n" +
-                             "It is highly recommended to change this with an SQL client!" + "\n\n" + "This will be supported in the future.";
-
-            // Experimental, will fuck up editing negative...
+            // Editing negative values (All Ranks)
             if (id <= 0)
             {
+                // Convert to positive number
                 id = id * -1;
-                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Edit all ranks
+                _cbUseNegative.Checked = true;
             }
 
             var spell = DBC.DBC.Spell[(uint)id];

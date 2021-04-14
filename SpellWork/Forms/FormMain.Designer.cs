@@ -152,6 +152,7 @@
             this._bSqlSave = new System.Windows.Forms.Button();
             this._cbProcFlag = new System.Windows.Forms.CheckBox();
             this._bWrite = new System.Windows.Forms.Button();
+            this._cbUseNegative = new System.Windows.Forms.CheckBox();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -288,8 +289,8 @@
             // tabControl1
             //
             this.tabControl1.Controls.Add(this._tpSpellInfo);
-            this.tabControl1.Controls.Add(this._tpSpellProcInfo);
             this.tabControl1.Controls.Add(this._tpCompare);
+            this.tabControl1.Controls.Add(this._tpSpellProcInfo);
             this.tabControl1.Controls.Add(this._tpSqlData);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
@@ -1575,6 +1576,19 @@
             this._bSqlSave.UseVisualStyleBackColor = true;
             this._bSqlSave.Click += new System.EventHandler(this.SqlSaveClick);
             //
+            // _bWrite
+            //
+            this._bWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._bWrite.Enabled = false;
+            this._bWrite.Location = new System.Drawing.Point(728, 1);
+            this._bWrite.Name = "_bWrite";
+            this._bWrite.Size = new System.Drawing.Size(75, 23);
+            this._bWrite.TabIndex = 3;
+            this._bWrite.Text = "Write";
+            this._bWrite.UseVisualStyleBackColor = true;
+            this._bWrite.Visible = false;
+            this._bWrite.Click += new System.EventHandler(this.WriteClick);
+            //
             // _cbProcFlag
             //
             this._cbProcFlag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1589,18 +1603,17 @@
             this._cbProcFlag.Visible = false;
             this._cbProcFlag.CheckedChanged += new System.EventHandler(this.CbProcFlagCheckedChanged);
             //
-            // _bWrite
+            // _cbUseNegative
             //
-            this._bWrite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._bWrite.Enabled = false;
-            this._bWrite.Location = new System.Drawing.Point(728, 1);
-            this._bWrite.Name = "_bWrite";
-            this._bWrite.Size = new System.Drawing.Size(75, 23);
-            this._bWrite.TabIndex = 3;
-            this._bWrite.Text = "Write";
-            this._bWrite.UseVisualStyleBackColor = true;
-            this._bWrite.Visible = false;
-            this._bWrite.Click += new System.EventHandler(this.WriteClick);
+            this._cbUseNegative.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._cbUseNegative.AutoSize = true;
+            this._cbUseNegative.Location = new System.Drawing.Point(625, 5);
+            this._cbUseNegative.Name = "_cbUseNegative";
+            this._cbUseNegative.Size = new System.Drawing.Size(100, 17);
+            this._cbUseNegative.TabIndex = 3;
+            this._cbUseNegative.Text = "Edit all ranks";
+            this._cbUseNegative.UseVisualStyleBackColor = true;
+            this._cbUseNegative.Visible = false;
             //
             // splitContainer7
             //
@@ -1663,6 +1676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 629);
+            this.Controls.Add(this._cbUseNegative);
             this.Controls.Add(this._bWrite);
             this.Controls.Add(this._cbProcFlag);
             this.Controls.Add(this.tabControl1);
@@ -1837,6 +1851,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox _tbSqlManual;
         private System.Windows.Forms.CheckBox _cbBinaryCompare;
+        private System.Windows.Forms.CheckBox _cbUseNegative;
         private System.Windows.Forms.TabPage _tpCompare;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.RichTextBox richTextBox1;
