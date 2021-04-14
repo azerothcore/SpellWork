@@ -617,7 +617,7 @@ namespace SpellWork.Forms
 
             _tvFamilyTree.SetMask(proc.SpellFamilyMask);
 
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 2;
         }
 
         #endregion
