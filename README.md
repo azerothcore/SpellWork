@@ -6,7 +6,7 @@
 SpellWork is a tool to browse and display information about World of Wacraft spells.
 It is implemented in .NET and it runs on Windows and Linux (with Mono).
 
-Instructions: Run `SpellWork.exe` and select the DBC folder extracted from the client (e.g. by running TrinityCore's `map_extractor`).
+Instructions: Run `SpellWork.exe` and select the DBC folder extracted from the client (e.g. by running AzerothCore's `map_extractor`).
 
 ![Screenshot](https://raw.githubusercontent.com/TrinityCore/SpellWork/9.x/screenshot.png)
 
