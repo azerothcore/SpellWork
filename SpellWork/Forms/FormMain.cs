@@ -588,6 +588,8 @@ namespace SpellWork.Forms
 
             var id = proc.Entry;
 
+            _cbUseNegative.Checked = false;
+
             // Editing negative values (All Ranks)
             if (id <= 0)
             {
