@@ -562,7 +562,7 @@ namespace SpellWork.Forms
             if (_cbUseNegative.Checked)
             {
                 // spell comment
-                comment = String.Format("-- ({0}) {1} (All Ranks)", ProcInfo.SpellProc.ID, ProcInfo.SpellProc.SpellNameRank);
+                comment = String.Format("-- (-{0}) {1} (All Ranks)", ProcInfo.SpellProc.ID, ProcInfo.SpellProc.SpellNameRank);
                 // delete query
                 delete = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = -{0};", ProcInfo.SpellProc.ID);
                 // insert query
