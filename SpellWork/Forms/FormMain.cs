@@ -552,7 +552,7 @@ namespace SpellWork.Forms
             var delete = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = {0};", ProcInfo.SpellProc.ID);
             // insert query
             var insert = String.Format(
-                            "INSERT INTO `spell_proc_event` VALUES" + "({0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
+                            "INSERT INTO `spell_proc_event` VALUES" + " ({0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
                             ProcInfo.SpellProc.ID, _clbSchools.GetFlagsValue(), _cbProcFitstSpellFamily.SelectedValue.ToUInt32(),
                             spellFamilyFlags[0], spellFamilyFlags[1], spellFamilyFlags[2], _clbProcFlags.GetFlagsValue(),
                             _clbProcFlagEx.GetFlagsValue(), _tbPPM.Text.Replace(',', '.'), _tbChance.Text.Replace(',', '.'),
@@ -567,7 +567,7 @@ namespace SpellWork.Forms
                 delete = String.Format("DELETE FROM `spell_proc_event` WHERE `entry` = -{0};", ProcInfo.SpellProc.ID);
                 // insert query
                 insert = String.Format(
-                            "INSERT INTO `spell_proc_event` VALUES" + "(-{0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
+                            "INSERT INTO `spell_proc_event` VALUES" + " (-{0}, 0x{1:X2}, 0x{2:X2}, 0x{3:X8}, 0x{4:X8}, 0x{5:X8}, 0x{6:X8}, 0x{7:X8}, {8}, {9}, {10});",
                             ProcInfo.SpellProc.ID, _clbSchools.GetFlagsValue(), _cbProcFitstSpellFamily.SelectedValue.ToUInt32(),
                             spellFamilyFlags[0], spellFamilyFlags[1], spellFamilyFlags[2], _clbProcFlags.GetFlagsValue(),
                             _clbProcFlagEx.GetFlagsValue(), _tbPPM.Text.Replace(',', '.'), _tbChance.Text.Replace(',', '.'),
