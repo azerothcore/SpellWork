@@ -57,7 +57,7 @@ namespace SpellWork.Properties
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("trinity")]
+        [global::System.Configuration.DefaultSettingValueAttribute("acore")]
         public string User
         {
             get
@@ -72,7 +72,7 @@ namespace SpellWork.Properties
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("trinity")]
+        [global::System.Configuration.DefaultSettingValueAttribute("acore")]
         public string Pass
         {
             get
