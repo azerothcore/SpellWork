@@ -8,109 +8,89 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SpellWork.Properties
-{
+namespace SpellWork.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
-    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
-        public string Host
-        {
-            get
-            {
+        public string Host {
+            get {
                 return ((string)(this["Host"]));
             }
-            set
-            {
+            set {
                 this["Host"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3306")]
-        public string PortOrPipe
-        {
-            get
-            {
+        public string PortOrPipe {
+            get {
                 return ((string)(this["PortOrPipe"]));
             }
-            set
-            {
+            set {
                 this["PortOrPipe"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("acore")]
-        public string User
-        {
-            get
-            {
+        public string User {
+            get {
                 return ((string)(this["User"]));
             }
-            set
-            {
+            set {
                 this["User"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("acore")]
-        public string Pass
-        {
-            get
-            {
+        public string Pass {
+            get {
                 return ((string)(this["Pass"]));
             }
-            set
-            {
+            set {
                 this["Pass"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("world")]
-        public string WorldDbName
-        {
-            get
-            {
+        [global::System.Configuration.DefaultSettingValueAttribute("acore_world")]
+        public string WorldDbName {
+            get {
                 return ((string)(this["WorldDbName"]));
             }
-            set
-            {
+            set {
                 this["WorldDbName"] = value;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UseDbConnect
-        {
-            get
-            {
+        public bool UseDbConnect {
+            get {
                 return ((bool)(this["UseDbConnect"]));
             }
-            set
-            {
+            set {
                 this["UseDbConnect"] = value;
             }
         }
